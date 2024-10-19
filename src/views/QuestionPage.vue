@@ -41,16 +41,17 @@ const shuffle = (array) => {
 </script>
 
 <template>
-  <div v-if="question" class="text-black">
-
+  <div v-if="question" class="flex h-full w-full flex-col items-center gap-8 p-10 text-slate-700">
     <BaseTitle>{{ question.category }} </BaseTitle>
-    {{ question.question }}
-<div v-for="answer in answers" v-html="answer.answer" :key="answer.id" class="">
+      <div v-html="question.question" class="text-center text-2xl font-bold text-slate-700" ></div>
+        <div class="grid w-full flex-grow grid-cols-2 gap-8 hover:cursor-pointer">
+          <div v-for="answer in answers" v-html="answer.answer" :key="answer.id" 
+            class="text-slate-700 text-4xl bg-purple-200 flex items-center justify-center rounded-lg py-10 px-2 hover:text-purple-900 trasition-colors duration-300">
+          </div>
+        </div>
 
-</div>
-
-  </div>
-  <div v-else class="text-black" >
+      </div>
+  <div v-else class="text-slate-700" >
     Loading...
 
   </div>
